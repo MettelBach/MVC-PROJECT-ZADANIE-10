@@ -1,0 +1,62 @@
+<div class="d-flex justify-content-between flex-wrap flex-md nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2">Library</h1>
+  </div>
+  
+  <% messages.forEach(element => { %>
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+      <%= element %>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  <% }) %>
+  
+
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
+
+  <% books.forEach(element => { %>
+  <div class="col">
+    <div class="card shadow-sm">
+      <% if (element.isChecked) { %>
+      <p class="badge bg-success-subtle border border-success-subtle text-success-emphasis rounded-pill px-3 mine">Read</p>
+      <% } else { %>
+        <p class="badge bg-danger-subtle border border-danger-subtle text-danger-emphasis rounded-pill px-3 mine">Not Read</p>
+      <% } %>
+      <img src="<%= element.imageLink %>" alt="" class="bd-placeholder-img card-img-top" width="100%" height="225">
+      <div class="card-body">
+        <h4><%= element.title %></h4>
+        <p class="card-text"><%= element.description.substr(0, 150) %>...</p>
+        <div class="container" style="padding-bottom: 15px;">
+          <div class="row">
+            <div class="col-4">
+            <p class="badge bg-primary-subtle border border-primary-subtle text-primary-emphasis rounded-pill px-3"><%= element.country %></p>
+         </div>
+            <div class="col-4">
+            <p class="badge bg-success-subtle border border-success-subtle text-success-emphasis rounded-pill px-3"><%= element.year %></p>
+          </div>
+            <div class="col-4">
+            <p class="badge bg-info-subtle border border-info-subtle text-info-emphasis rounded-pill px-3"><%= element.genre %></p>
+          </div>
+        </div>
+      </div>
+        <div class="d-flex justify-content-between align-items-center">
+          <div class="btn-group">
+            <a href="/view/<%= element._id %>" style="margin-right: 10px;">
+              <button type="button" class="btn btn-primary rounded-pill px-3">View</button>
+            </a>
+            <a href="/edit/<%= element._id %>" style="margin-right: 10px;">
+              <button type="button" class="btn btn-warning rounded-pill px-3">Edit</button>
+            </a>
+            <form action="/edit/<%= element._id %>?_method=DELETE" method="POST" class="position-relative">
+              <button type="submit" class="btn btn-danger rounded-pill px-3">Delete</button>
+            </form>
+          </div>
+          <small class="text-body-secondary"><%= element.createdAt.getDate() %>/<%= element.createdAt.getMonth()+1 %>/<%= element.createdAt.getFullYear() %></small>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% }) %>
+
+  </div>
+
+  <%- include("partials/pagination.ejs") %>

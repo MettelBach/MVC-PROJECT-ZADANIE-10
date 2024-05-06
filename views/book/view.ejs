@@ -1,0 +1,87 @@
+<div class="d-flex justify-content-between flex-wrap flex-md nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2"><%= book.title  %></h1>
+    <div class="btn-toolbar mb-2 mb-md 0">
+          <form action="/edit/isChecked/<%= book._id %>" method="POST">
+            <% if (book.isChecked) { %>
+              <div class="form-group">
+                <button type="submit" class="btn text-bg-danger rounded-pill">Mark As Not Read</button>
+            </div>
+            <% } else { %>
+              <div class="form-group">
+                <button type="submit" class="btn text-bg-success rounded-pill">Mark As Read</button>
+            </div>
+            <% } %>
+          </form>  
+    </div>
+  </div>
+  
+  <div class="col py-3">
+  
+    <div class="row">
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <% if (book.isChecked) { %>
+            <p class="badge bg-success-subtle border border-success-subtle text-success-emphasis rounded-pill px-3">Read</p>
+          <% } else { %>
+            <p class="badge bg-danger-subtle border border-danger-subtle text-danger-emphasis rounded-pill px-3">Not Read</p>
+          <% } %>
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Library</a></li>
+            <li class="breadcrumb-item active"><%= book.title  %></li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  
+  </div>
+
+  <div class="p-4 p-md-5 mb-4 rounded bg-body-secondary hhh" style="background: url('<%= book.imageLink %>') 50% 0/100% auto no-repeat;">
+    <div class="col-lg-6 px-0">
+      <h1 class="display-4 fst-italic"><%= book.title %></h1>
+      <p class="lead my-3"><b><%= book.description.substr(0, 200) %>...</b></p>
+      <p class="lead mb-0"><a href="#lower" class="text-body-emphasis fw-bold" style="color:white !important;">Continue reading...</a></p>
+    </div>
+  </div>
+  
+  <div class="row" style="margin-top: 100px;">
+    <div class="col">
+      <h3 id="lower" class="pb-4 mb-4 fst-italic border-bottom">
+        About your book
+      </h3>
+
+      <article class="blog-post">
+        <h2 class="display-5 link-body-emphasis mb-1"><%= book.title %></h2>
+        <p class="blog-post-meta">Created <%= book.createdAt.getDate() %>/<%= book.createdAt.getMonth()+1 %>/<%= book.createdAt.getFullYear() %> by <a href="#">You</a></p>
+
+        <p><%= book.description %></p>
+        <hr>
+        <p>This is some additional paragraph placeholder content. It has been written to fill the available space and show how a longer snippet of text affects the surrounding content. We'll repeat it often to keep the demonstration flowing, so be on the lookout for this exact same string of text.</p>
+        
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Country</th>
+              <th>Year</th>
+              <th>Genre</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><%= book.country %></td>
+              <td><%= book.year %></td>
+              <td><%= book.genre %></td>
+            </tr>
+          </tbody>
+        </table>
+
+      <div class="d-flex" style="margin-bottom: 100px; margin-top: 40px;">
+        <a class="btn btn-primary rounded-pill" href="/" style="margin-right: 10px;">Back</a>
+        <a href="/edit/<%= book._id %>" style="margin-right: 10px;">
+          <button type="button" class="btn btn-warning rounded-pill">Edit</button>
+        </a>
+        <form action="/edit/<%= book._id %>?_method=DELETE" method="POST">
+          <button type="submit" class="btn btn-danger rounded-pill">Delete</button>
+        </form>
+      </div>
+    </div>
+  </div>
