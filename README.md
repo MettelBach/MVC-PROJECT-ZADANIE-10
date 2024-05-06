@@ -4,9 +4,10 @@
  <h1> 2) Spis treści</h1>
  <h4>Projekt polega na utworzeniu aplikacji, która umożliwi użytkownikom tworzenie i zarządzanie listą
 książek do przeczytania. Użytkownicy mogą dodawać nowe pozycje do listy, oznaczać książki jako
-przeczytane oraz usuwać z listy.
-Struktura projektu MVC: - Model (models): definicja modelu pozycji do przeczytania (np. tytuł, autor, gatunek),
-- Kontroler (controllers): obsługa żądań http, interakcja z modelem i przekazywanie danych do widoku, 
+przeczytane oraz usuwać z listy.<br>
+Struktura projektu MVC: <br>
+- Model (models): definicja modelu pozycji do przeczytania (np. tytuł, autor, gatunek),<br>
+- Kontroler (controllers): obsługa żądań http, interakcja z modelem i przekazywanie danych do widoku, <br>
 - Widok: (views): widok listy książek do przeczytania, formularz dodawania nowej książki, formularz
 edycji informacji o książce.  </h4>
 
