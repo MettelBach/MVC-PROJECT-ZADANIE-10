@@ -1,5 +1,5 @@
 <h1> 1) Tytuł i nazwa wybranego projektu </h1>
-Zadanie 10 – System zarządzania listą zadań do przeczytania
+Zadanie 10 – System zarządzania listą zadań do przeczytania.
 
  <h1> 2) Spis treści</h1>
 Projekt polega na utworzeniu aplikacji, która umożliwi użytkownikom tworzenie i zarządzanie listą
