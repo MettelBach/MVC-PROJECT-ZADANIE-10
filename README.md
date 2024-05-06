@@ -15,6 +15,7 @@ edycji informacji o książce.  </h4>
  <h4>- Dodawanie nowych pozycji do listy książek: Tworzenie książki i dodawanie do bazy danych (Wpisujesz takie dane: Tytuł, Opis, Rok, Gatunek i Zdjęcię) </h4>
  <h4>- Oznaczanie książek jako przeczytane: Zmiana właściwości książki z "nie przeczytane" na "przeczytane" (Znajduje się w bazie danych) </h4>
  <h4>- Usuwanie książek z listy: Usuwanie wszystkich danych książki z bazy danych  </h4>
+ <h4>- Redagowanie książek: Zmiana wszystkich, usunięcie lub dodanie nowych danych w bazie danych </h4>
  <h4>- Przeglądanie stworzonych książek: Wyświetlanie wszystkich danych z bazy danych </h4>
 
 <h1>UWAGA</h1>
