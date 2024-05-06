@@ -21,4 +21,4 @@ edycji informacji o książce.
 
 <h1>UWAGA</h1>
 1) Dane wejściowe już wpisane i przechowują się w bazie danych;<br>
-2) Żeby uruchomić aplikację trzeba uruchomić plik app.js lub wpisać w konsolę "npm start" i następnie zainstalować wszystkie zależności wpisane w package.json
+2) Żeby uruchomić aplikację trzeba uruchomić plik app.js lub wpisać w konsolę "npm start" i następnie zainstalować wszystkie zależności zapisane w package.json
